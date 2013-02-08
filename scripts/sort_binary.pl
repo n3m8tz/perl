@@ -21,7 +21,7 @@ for (0 .. 10) {
     $array[$_] = int(rand(2));
 }
 print "the array is @array\n";
-my @array2 = map { int(rand(100) };
+my @array2 = map { int(rand(100) } 1 .. 100;
 
 
 my @sorted = binary_sort(@array);
