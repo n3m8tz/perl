@@ -78,15 +78,28 @@ package main {
             $_[$j-- + 1] = $_[$j] while ($j >= 0 && $_[$j] > $val);
             $_[$j+1] = $val;
         }
-        #@_;
+        @_;
     }
 
     my $input    = [1, 3, 5, 2, 4, 0];
     my $expected = [0, 1, 2, 3, 4, 5];
-
     sort_bubble_inplace($input);
 
     is_deeply($input, $expected);
+
+    my @array;
+    foreach(0 .. 10) {
+        $array[$_] = int(rand(100));
+    }
+    my @i_sort_1 = insert_sort(@array);
+    my @i_sort_2 = insert_sort2(@array);
+    print "Original array: @array\n";
+    print "Insert sorted array 1: @i_sort_1 \n";
+    print "Insert sorted array 2: @i_sort_2 \n";
+
 }
 
 done_testing();
+
+
+
